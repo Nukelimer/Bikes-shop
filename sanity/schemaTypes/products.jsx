@@ -33,6 +33,17 @@ export default {
       type: 'array',
       of: [{type: 'image'}],
     },
+
+    {
+
+      name: 'slug',
+      title: 'Product Slug',
+      type: 'slug',
+      options: {
+        source: 'name'
+      }
+    },
+
     {
       name: 'categories',
       title: 'Categories',
