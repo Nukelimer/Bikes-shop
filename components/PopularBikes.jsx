@@ -5,30 +5,35 @@ import React from "react";
 import PopularBikeCarousel from "./PopularBikeCarousel";
 
 const getData = async () => {
-  const query = `*[_type == 'product'&& references (*[_type== 'category' && name =='popular']._id, categories)]{
-        _id,
-          name,
-          description,
-          images,
-          price,
-          price_id,
-          'slug': slug.current,
-          'categories':categories[]->{
-        name
-        
-        }
-        
-        
-        
-        
-        }`;
+  // const query = `*[_type == 'product'&& references (*[_type== 'category' && name =='popular']._id, categories)]{
+  //       _id,
+  //         name,
+  //         description,
+  //         images,
+  //         price,
+  //         price_id,
+  //         'slug': slug.current,
+  //         'categories':categories[]->{ name }}`;
+
+  const query = `
+  *[_type == 'product' && references(*[_type == 'category' && name == 'popular'][]._id)] {
+    _id,
+    name,
+    description,
+    images,
+    price,
+    price_id,
+    'slug': slug.current,
+    'categories': categories[]->{ name }
+  }
+  
+  `;
   const fetchData = await client.fetch(query);
   return fetchData;
 };
 
 async function PopularBikes() {
   const productsData = await getData();
-
 
   return (
     <section className="py-24">

@@ -60,22 +60,45 @@
 
   .popular-bike-slider .swiper-wrapper {
     @apply !h-[500px];
-    
-
-
   }
 
   .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
   .swiper-pagination-horizontal.swiper-pagination-bullets
     .swiper-pagination-bullet {
     @apply !bg-accent;
-  
   }
 
-
-
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
-  @apply !bg-accent;
-
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    @apply !bg-accent;
+  }
 }
+
+.text-transition {
+  display: block;
+  font-family: sans-serif;
+  background: linear-gradient(
+      to right,
+      rgba(115, 95, 115, 0) 0%,
+      rgba(225, 255, 255, 0.5) 20%,
+      rgba(144, 81, 81, 0) 61%
+    ),
+    linear-gradient(
+      rgb(243, 73, 16) 52%,
+      rgb(72, 89, 95) 60%,
+      rgb(70, 78, 92) 61%
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  animation: wave 2000ms ease alternate infinite;
+  transition: all 0.4s ease;
+}
+@keyframes wave {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10vw 60px;
+  }
 }

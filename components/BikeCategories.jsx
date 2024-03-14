@@ -10,7 +10,7 @@ import Bike from "./Bike";
 function BikeCategories({ bikes }) {
   const [category, setCategory] = useState("all");
   const [filteredBikes, setFilteredBikes] = useState([]);
-  const [price, setPrice] = useState(10000);
+  const [price, setPrice] = useState(50000);
 
   useEffect(() => {
     const filtered = bikes.filter((bike) => {
@@ -86,7 +86,7 @@ function BikeCategories({ bikes }) {
                 </span>
               </div>
               <Slider
-                defaultValue={[10000]}
+                defaultValue={[50000]}
                 step={10}
                 max={600000}
                 onValueChange={(val) => setPrice(val[0])}
