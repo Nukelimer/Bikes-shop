@@ -5,7 +5,7 @@ import React from "react";
 import PopularBikeCarousel from "./PopularBikeCarousel";
 
 const getData = async () => {
-  const query = `*[_type == 'product'&& references(*[_type== 'category' && name =='popular']._id, categories)]{
+  const query = `*[_type == 'product'&& references (*[_type== 'category' && name =='popular']._id, categories)]{
         _id,
           name,
           description,
@@ -28,7 +28,7 @@ const getData = async () => {
 
 async function PopularBikes() {
   const productsData = await getData();
-  console.log(productsData);
+
 
   return (
     <section className="py-24">

@@ -26,11 +26,13 @@ const getData = async (slug) => {
     }}`;
 
   const data = await client.fetch(query);
+  console.log(data);
   return data;
 };
 
 async function Page({ params }) {
   const bike = await getData(params.slug);
+
   return (
     <section className="pt-24 pb-32">
       <div className="container mx-auto">
@@ -42,6 +44,7 @@ async function Page({ params }) {
               height={290}
               priority
               alt="bike"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
 
@@ -53,37 +56,43 @@ async function Page({ params }) {
             <div className="flex flex-col gap-6 items-start">
               <div className="">
                 <h3>{bike.name}</h3>
-                <p className="text-lg font-semibold">${bike.price}</p>
+                <p className="text-lg font-semibold">₦{bike.price}</p>
                 <p>
                   {bike.description.slice(0, 200).concat("...")}
                   <button className="text-red-500 underline">Read More</button>
                 </p>
                 <AddToCartBtn
+                  id={bike._id}
+                  name={bike.name}
+                  currency="NGN"
+                  price={bike.price}
+                  images={bike.images}
+                  description={bike.description}
                   text="Add to Cart"
                   btnStyles=" mt-6 btn btn-accent text-[0.5em] hover:bg-slate-300 hover:scale-125 hover:translate-x-[4em] hover:translate-y-[1em]  rounded-md hover:transition-all hover:text-primary "
                 />
               </div>
-            <div className="flex flex-col gap-3 ">
-              <div className="flex gap-3">
-                <PackageCheck size={20} className="text-accent" />
-                <p>Free shipping on orders over $130</p>
+              <div className="flex flex-col gap-3 ">
+                <div className="flex gap-3">
+                  <PackageCheck size={20} className="text-accent" />
+                  <p>Free shipping on orders over ₦130,000</p>
+                </div>
+                <div className="flex gap-3">
+                  <RefreshCw size={20} className="text-accent" />
+                  <p>Free shipping on orders over ₦130,000</p>
+                </div>{" "}
+                <div className="flex gap-3">
+                  <Bike size={20} className="text-accent" />
+                  <p>
+                    The bicycles are partially assembled and benefit from
+                    transport insurance.
+                  </p>
+                </div>{" "}
+                <div className="flex gap-3">
+                  <Clock size={20} className="text-accent" />
+                  <p>Fast delivery.</p>
+                </div>
               </div>
-              <div className="flex gap-3">
-                <RefreshCw size={20} className="text-accent" />
-                <p>Free shipping on orders over $130</p>
-              </div>{" "}
-              <div className="flex gap-3">
-                <Bike size={20} className="text-accent" />
-                <p>
-                  The bicycles are partially assembled and benefit from
-                  transport insurance.
-                </p>
-              </div>{" "}
-              <div className="flex gap-3">
-                <Clock size={20} className="text-accent" />
-                <p>Fast delivery.</p>
-              </div>
-            </div>
             </div>
           </div>
         </div>

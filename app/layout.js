@@ -2,11 +2,13 @@ import { Cabin } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import CartProvider from "@/components/CartProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 const cabin = Cabin({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: '--cabin'
+  variable: "--cabin",
 });
 
 export const metadata = {
@@ -18,9 +20,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={cabin.variable}>
-        <Header/>
-        {children}
-      <Footer/>
+        <CartProvider>
+          <Header />
+          {children}
+
+          <Toaster />
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
