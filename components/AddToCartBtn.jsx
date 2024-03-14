@@ -26,12 +26,10 @@ function AddToCartBtn({
     name,
   };
 
-  
   return (
     <button
       className={`${btnStyles}`}
       onClick={() => {
-    
         toast({
           title: `${name} has been added to cart!`,
         });
