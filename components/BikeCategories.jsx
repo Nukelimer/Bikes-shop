@@ -77,7 +77,7 @@ function BikeCategories({ bikes }) {
                 <span className="text-accent font-semibold ml-2 ">
                   ₦{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </span>{" "}
-                <span className="ml-2 block">(
+                <span className="ml-2 whitespace-nowrap">(
                   {filteredBikes.length > 1
                     ? `${filteredBikes.length} items`
                     : filteredBikes === 0
