@@ -29,8 +29,8 @@ function BikeCategories({ bikes }) {
   return (
     <section className="min-h-[1200px] py-10">
       <div className="container mx-auto">
-        <div className="flex flex-col">
-          <aside className="  w-full p-4 mb-8 xl:w-[300px] xl:h-[84vh] xl:fixed">
+        <div className="flex flex-col  ">
+          <aside className="  w-full p-4 px-0 mb-8 lg:w-[200px] xl:h-[84vh] lg:fixed">
             <RadioGroup
               defaultValue="all"
               className="flex flex-col gap-7 mb-12">
@@ -72,7 +72,7 @@ function BikeCategories({ bikes }) {
             </RadioGroup>
 
             <div className="max-w-56">
-              <div className="text-lg mb-4 font-medium flex">
+              <div className="text-lg mb-4 font-medium flex whitespace-nowrap">
                 Max Price:{" "}
                 <span className="text-accent font-semibold ml-2 ">
                   ₦{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
@@ -93,8 +93,8 @@ function BikeCategories({ bikes }) {
               />
             </div>
           </aside>
-          <div className=" w-full xl:w-[1050px] ml-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[40px]">
+          <div className=" w-full lg:w-[550px] xl:w-[650px] 2xl:w-[1050px] ml-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-[20px]">
               {filteredBikes.map((bike) => {
                 return <Bike bikesData={bike} key={bike._id} />;
               })}

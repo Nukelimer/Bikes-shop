@@ -44,11 +44,11 @@ function Bike({ bikesData }) {
             images={bikesData.images}
             description={bikesData.description}
             btnStyles={
-              "btn btn-accent btn-icon btn-primary hover:bg-slate-300 hover:scale-125 rounded-md hover:transition-all"
+              "btn btn-accent btn-icon btn-primary hover:bg-slate-300 hover:scale-100 rounded-md hover:transition-all"
             }
           />
           <Link href={`/product/${bikesData.slug}`}>
-            <button className="btn-icon btn-primary hover:bg-slate-300 hover:scale-125 rounded-md hover:transition-all">
+            <button className="btn-icon btn-primary hover:bg-slate-300 hover:scale-100 rounded-md hover:transition-all">
               <CgEye />
             </button>
           </Link>

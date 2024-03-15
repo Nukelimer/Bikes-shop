@@ -69,7 +69,7 @@ async function Page({ params }) {
                   images={bike.images}
                   description={bike.description}
                   text="Add to Cart"
-                  btnStyles=" mt-6 btn btn-accent text-[0.5em] hover:bg-slate-300 hover:scale-125 hover:translate-x-[4em] hover:translate-y-[1em]  rounded-md hover:transition-all hover:text-primary "
+                  btnStyles=" mt-6 btn btn-accent text-[0.5em] hover:bg-slate-300 hover:scale-100 hover:translate-x-[4em] hover:translate-y-[1em]  rounded-md hover:transition-all hover:text-primary "
                 />
               </div>
               <div className="flex flex-col gap-3 ">
