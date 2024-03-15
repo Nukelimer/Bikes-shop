@@ -77,12 +77,12 @@ function BikeCategories({ bikes }) {
                 <span className="text-accent font-semibold ml-2 ">
                   ₦{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </span>{" "}
-                <span className="ml-2 ">
+                <span className="ml-2 block">(
                   {filteredBikes.length > 1
                     ? `${filteredBikes.length} items`
                     : filteredBikes === 0
                     ? `${filteredBikes.length} items`
-                    : `${filteredBikes.length} item`}
+                    : `${filteredBikes.length} item`})
                 </span>
               </div>
               <Slider
