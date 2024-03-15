@@ -40,7 +40,7 @@ async function PopularBikes() {
       <div className="container mx-auto">
         <h2 className="text-center">Most Popular Bikes</h2>
         <p className="text-center mb-8">
-          The world's premium brands in one destination.
+          The world&apos;s premium brands in one destination.
         </p>
 
         <PopularBikeCarousel productsData={productsData} />

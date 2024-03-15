@@ -35,7 +35,7 @@ function CartSideBar() {
             {cartCount === 0 ? (
               <div className="flex flex-col items-center justify-center w-full h-full">
                 <p className="font-semibold text-xl">
-                  You haven't added a bike to your cart.{" "}
+                  You haven&apos;t added a bike to your cart.{" "}
                 </p>
               </div>
             ) : (
