@@ -23,7 +23,7 @@ function CartSideBar() {
   const formattedPrice = formatNumberWithCommas(totalPrice);
   return (
     <div>
-      <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
+      <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()} >
         <SheetContent>
           <SheetHeader>
             <SheetTitle className="text-left mb-12">
